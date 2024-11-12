@@ -8,11 +8,11 @@ const Productcard = ({ product, addToCart }) => {
         addToCart(product); // Add product to the cart
       };
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345, width: '300px', height: '500px' }}>
       {/* Product Image */}
       <CardMedia
         component="img"
-        height="200"
+        height="300"
         image={product.image}
         alt={product.name}
       />
