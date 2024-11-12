@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, List, ListItem, ListItemText, Button, Box } from '@mui/material';
+import { Container, Typography, List, ListItem, ListItemText, Button, Box, Avatar } from '@mui/material';
 
 const Cart = ({ cartItems, clearCart }) => {
   const getTotalPrice = () => {
@@ -17,7 +17,12 @@ const Cart = ({ cartItems, clearCart }) => {
         <Box>
           <List>
             {cartItems.map((item, index) => (
-              <ListItem key={index}>
+              <ListItem key={index} sx={{ display: 'flex', alignItems: 'center' }}>
+                <Avatar
+                  src={item.image} // Assuming the product image URL is stored in the 'image' property
+                  alt={item.name}
+                  sx={{ width: 56, height: 56, mr: 2 }}
+                />
                 <ListItemText
                   primary={item.name}
                   secondary={`Price: $${item.price.toFixed(2)} | Quantity: ${item.quantity}`}
@@ -25,7 +30,7 @@ const Cart = ({ cartItems, clearCart }) => {
               </ListItem>
             ))}
           </List>
-          <Typography variant="h6">Total: ${getTotalPrice()}</Typography>
+          <Typography variant="h6" sx={{ mt: 2 }}>Total: ${getTotalPrice()}</Typography>
           <Button
             variant="contained"
             color="secondary"
