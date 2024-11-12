@@ -39,7 +39,7 @@ const products = [
     {
       id: 6,
       name: 'T-Shirt',
-      price: 19.99,
+      price: 19.99, 
       image: 'src/images/tshirt.webp',
       category: 'Clothing',
     },
